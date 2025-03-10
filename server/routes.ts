@@ -45,6 +45,50 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Get blog posts
+  app.get("/api/blog", async (_req, res) => {
+    try {
+      const posts = await storage.getBlogPosts();
+      res.json(posts);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch blog posts" });
+    }
+  });
+
+  // Get blog post by slug
+  app.get("/api/blog/:slug", async (req, res) => {
+    try {
+      const post = await storage.getBlogPostBySlug(req.params.slug);
+      if (!post) {
+        res.status(404).json({ message: "Blog post not found" });
+        return;
+      }
+      res.json(post);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch blog post" });
+    }
+  });
+
+  // Get blog posts by category
+  app.get("/api/blog/category/:category", async (req, res) => {
+    try {
+      const posts = await storage.getBlogPostsByCategory(req.params.category);
+      res.json(posts);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch blog posts by category" });
+    }
+  });
+
+  // Get pricing packages
+  app.get("/api/pricing", async (_req, res) => {
+    try {
+      const packages = await storage.getPricingPackages();
+      res.json(packages);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch pricing packages" });
+    }
+  });
+
   // Submit inquiry
   app.post("/api/inquiries", async (req, res) => {
     try {
