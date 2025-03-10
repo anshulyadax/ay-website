@@ -8,21 +8,45 @@ const services = [
     title: "Web Development",
     description: "Professional websites built with cutting-edge technologies.",
     icon: <Monitor className="h-6 w-6 text-primary" />,
+    features: [
+      "Responsive Design",
+      "Custom CMS Integration",
+      "SEO Optimization",
+      "Performance Tuning"
+    ]
   },
   {
     title: "App Development",
     description: "Cross-platform mobile apps for iOS and Android.",
     icon: <Smartphone className="h-6 w-6 text-primary" />,
+    features: [
+      "Native Development",
+      "Cross-platform Solutions",
+      "User-friendly Design",
+      "App Store Support"
+    ]
   },
   {
     title: "Cloud Services",
     description: "Scalable and secure cloud infrastructure solutions.",
     icon: <Cloud className="h-6 w-6 text-primary" />,
+    features: [
+      "Cloud Migration",
+      "24/7 Monitoring",
+      "Data Security",
+      "Scalable Solutions"
+    ]
   },
   {
     title: "Digital Marketing",
     description: "Result-driven digital marketing strategies.",
     icon: <BarChart className="h-6 w-6 text-primary" />,
+    features: [
+      "SEO Strategy",
+      "Social Media",
+      "Content Marketing",
+      "Analytics"
+    ]
   },
 ];
 
@@ -43,6 +67,7 @@ export default function ServicesOverview() {
             title={service.title}
             description={service.description}
             icon={service.icon}
+            features={service.features}
           />
         ))}
       </div>
