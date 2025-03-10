@@ -11,6 +11,8 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
+  { name: "About", href: "/about" },
+  { name: "FAQ", href: "/faq" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -22,7 +24,7 @@ export default function Navbar() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="text-xl font-bold">TechSolutions</span>
+            <span className="text-xl font-bold">AyEnterprise</span>
           </Link>
           <div className="flex gap-6">
             {navigation.map((item) => (
