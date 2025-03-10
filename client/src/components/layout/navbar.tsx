@@ -5,7 +5,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, Code2 } from "lucide-react";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -25,8 +25,13 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold">AyEnterprise</span>
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="p-1 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+              <Code2 className="h-6 w-6 text-primary" />
+            </div>
+            <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              AyEnterprise
+            </span>
           </Link>
           <div className="hidden md:flex gap-6">
             {navigation.map((item) => (
