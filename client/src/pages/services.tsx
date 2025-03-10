@@ -26,15 +26,15 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="container py-16">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold tracking-tight mb-4">Our Services</h1>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
+    <div className="container px-4 py-8 sm:py-16">
+      <div className="text-center mb-8 sm:mb-12">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Our Services</h1>
+        <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
           We offer comprehensive digital solutions to help your business thrive in the modern digital landscape.
         </p>
       </div>
-      
-      <div className="grid gap-8 md:grid-cols-2">
+
+      <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-2">
         {services.map((service) => (
           <ServiceCard
             key={service.title}
